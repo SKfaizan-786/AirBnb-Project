@@ -65,8 +65,8 @@ const sessionOptions = {
     cookie: {
         expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
         maxAge: 7 * 24 * 60 * 60 * 1000,
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
+        httpOnly: true, // Protects against XSS
+        secure: process.env.NODE_ENV === "production" && process.env.HTTPS_ENABLED === "true", // Enables secure cookies only if HTTPS is enabled
     },
 };
 app.use(session(sessionOptions));
@@ -81,8 +81,8 @@ passport.deserializeUser(User.deserializeUser());
 
 // Middleware for global variables
 app.use((req, res, next) => {
-    console.log("Session Data:", req.session);
-    console.log("Current User:", req.user);
+    console.log("Session Data:", req.session); // Debugging
+    console.log("Current User:", req.user);  // Check if user is being set
     res.locals.successMsg = req.flash("success");
     res.locals.errorMsg = req.flash("error");
     res.locals.currentUser = req.user || null;
