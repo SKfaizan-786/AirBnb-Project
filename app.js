@@ -81,8 +81,8 @@ passport.deserializeUser(User.deserializeUser());
 
 // Middleware for global variables
 app.use((req, res, next) => {
-    console.log("Session Data:", req.session); // Debugging
-    console.log("Current User:", req.user);  // Check if user is being set
+    // console.log("Session Data:", req.session); // Debugging
+    // console.log("Current User:", req.user);  // Check if user is being set
     res.locals.successMsg = req.flash("success");
     res.locals.errorMsg = req.flash("error");
     res.locals.currentUser = req.user || null;
