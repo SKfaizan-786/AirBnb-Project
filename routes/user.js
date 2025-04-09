@@ -20,7 +20,6 @@ router.route("/login")
             failureRedirect: "/login",
         }),
         (req, res, next) => {
-            console.log("User authenticated:", req.user); // Debugging log
             next();
         },
         userController.login
