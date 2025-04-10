@@ -1,29 +1,25 @@
-<style>
-  .search-btn {
-    background-color: #fe424d;
-    color: #fff;
-    border-radius: 25px;
-    padding: 0 1rem 0 1rem;
-  }
-  .search-btn:hover {
-    background-color: #ff5a5f;
-    color: #fff;
-  }
-  .search-btn i {
-    display: inline;
-    margin-right: 0.5rem;
-  }
-  .search-inp {
-    border-radius: 25px;
-    padding: 0.5rem 3rem 0.5rem 3rem;
-    font-size: 0.9rem;
-  }
-</style>
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+<!-- Search Bar for Small Screens -->
+<div class="container mt-3 d-md-none mobile-search-bar">
+  <form class="d-flex" role="search">
+    <input
+      class="form-control me-2 search-inp"
+      type="search"
+      placeholder="Search destinations"
+    />
+    <button class="btn search-btn" type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i> Search
+    </button>
+  </form>
+</div>
+
+<!-- Desktop Navbar Only -->
+<nav
+  class="navbar navbar-expand-md bg-body-light border-bottom sticky-top d-none d-md-flex"
+>
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"
-      ><i class="fa-regular fa-compass"></i
-    ></a>
+    <a class="navbar-brand" href="/listings">
+      <i class="fa-regular fa-compass"></i>
+    </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -60,3 +56,65 @@
     </div>
   </div>
 </nav>
+
+<!-- Bottom Mobile Navigation -->
+<div class="mobile-nav d-md-none">
+  <a href="/listings"><i class="fa-solid fa-compass"></i><br />Explore</a>
+  <% if (!currentUser) { %>
+  <a href="/login"><i class="fa-solid fa-right-to-bracket"></i><br />Login</a>
+  <a href="/signup"><i class="fa-solid fa-user-plus"></i><br />Signup</a>
+  <% } else { %>
+  <a href="/listings/new"><i class="fa-solid fa-house"></i><br />Your Home</a>
+  <a href="/logout"><i class="fa-solid fa-sign-out-alt"></i><br />Logout</a>
+  <% } %>
+</div>
+
+<!-- Styles -->
+<style>
+  .search-btn {
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+  }
+  .search-btn:hover {
+    background-color: #ff5a5f;
+    color: #fff;
+  }
+  .search-btn i {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  .search-inp {
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    font-size: 0.9rem;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+    z-index: 1000;
+  }
+  .mobile-nav a {
+    color: #000;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  .mobile-nav i {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding-bottom: 60px;
+    }
+  }
+</style>

@@ -2,75 +2,77 @@
 <link href="/css/filter.css" rel="stylesheet" />
 
 <body>
-  <div class="filter-wrapper">
-    <div class="filter-container">
-      <div class="scroll-btn left hidden" onclick="scrollFilters(-200)">
-        <i class="fa-solid fa-chevron-left"></i>
+  <div class="sticky-filters-wrapper">
+    <div class="filter-wrapper">
+      <div class="filter-container">
+        <div class="scroll-btn left hidden" onclick="scrollFilters(-200)">
+          <i class="fa-solid fa-chevron-left"></i>
+        </div>
+
+        <div id="filters">
+          <div class="filter">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Iconic cities</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-mountain"></i></div>
+            <p>Mountains</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-chess-rook"></i></div>
+            <p>Castles</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing pools</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Camping</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-cow"></i></div>
+            <p>Farms</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-snowflake"></i></div>
+            <p>Arctic</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-igloo"></i></div>
+            <p>Domes</p>
+          </div>
+          <div class="filter">
+            <div><i class="fa-solid fa-ship"></i></div>
+            <p>Boats</p>
+          </div>
+        </div>
+
+        <div class="scroll-btn right" onclick="scrollFilters(200)">
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
       </div>
 
-      <div id="filters">
-        <div class="filter">
-          <div><i class="fa-solid fa-fire"></i></div>
-          <p>Trending</p>
+      <div class="tax-toggle">
+        <div class="form-check-reverse form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDefault"
+          />
+          <label class="form-check-label" for="flexSwitchCheckDefault"
+            >Display total after taxes
+          </label>
         </div>
-        <div class="filter">
-          <div><i class="fa-solid fa-bed"></i></div>
-          <p>Rooms</p>
-        </div>
-        <div class="filter">
-          <div><i class="fa-solid fa-mountain-city"></i></div>
-          <p>Iconic cities</p>
-        </div>
-        <div class="filter">
-          <div><i class="fa-solid fa-mountain"></i></div>
-          <p>Mountains</p>
-        </div>
-        <div class="filter">
-          <div><i class="fa-solid fa-chess-rook"></i></div>
-          <p>Castles</p>
-        </div>
-        <div class="filter">
-          <div><i class="fa-solid fa-person-swimming"></i></div>
-          <p>Amazing pools</p>
-        </div>
-        <div class="filter">
-          <div><i class="fa-solid fa-campground"></i></div>
-          <p>Camping</p>
-        </div>
-        <div class="filter">
-          <div><i class="fa-solid fa-cow"></i></div>
-          <p>Farms</p>
-        </div>
-        <div class="filter">
-          <div><i class="fa-solid fa-snowflake"></i></div>
-          <p>Arctic</p>
-        </div>
-        <div class="filter">
-          <div><i class="fa-solid fa-igloo"></i></div>
-          <p>Domes</p>
-        </div>
-        <div class="filter">
-          <div><i class="fa-solid fa-ship"></i></div>
-          <p>Boats</p>
-        </div>
-      </div>
-
-      <div class="scroll-btn right" onclick="scrollFilters(200)">
-        <i class="fa-solid fa-chevron-right"></i>
-      </div>
-    </div>
-
-    <div class="tax-toggle">
-      <div class="form-check-reverse form-switch">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          role="switch"
-          id="flexSwitchCheckDefault"
-        />
-        <label class="form-check-label" for="flexSwitchCheckDefault"
-          >Display total after taxes</label
-        >
       </div>
     </div>
   </div>

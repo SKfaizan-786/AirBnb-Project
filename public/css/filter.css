@@ -1,30 +1,45 @@
-.filter-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10px;
+/* General Styles */
+.listing-link {
+    text-decoration: none;
 }
 
+.filter-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Container holding filters and scroll buttons */
 .filter-container {
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
     flex-grow: 1;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #fff;
+    z-index: 999;
 }
 
+/* Scroll Buttons */
 .scroll-btn {
     background: white;
     border: 1px solid #ddd;
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    display: flex;
+    display: none;
+    /* default hidden */
     justify-content: center;
     align-items: center;
     cursor: pointer;
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 10;
     transition: opacity 0.3s ease-in-out;
 }
@@ -42,34 +57,36 @@
     pointer-events: none;
 }
 
+/* Scrollable Filters Section */
 #filters {
+    display: inline-flex;
     align-items: center;
-    display: flex;
     flex-wrap: nowrap;
+    gap: 2rem;
     overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     white-space: nowrap;
     scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     width: 100%;
     padding: 0;
     margin: 0;
-}
-
-.filter:first-child {
-    margin-left: 0;
-    /* Ensure first filter is at the start */
 }
 
 #filters::-webkit-scrollbar {
     display: none;
 }
 
+/* Individual Filter */
 .filter {
     text-align: center;
-    margin-right: 1.5rem;
     min-width: 100px;
     opacity: 0.7;
+    flex: 0 0 auto;
+}
+
+.filter:first-child {
+    margin-left: 0;
 }
 
 .filter p {
@@ -81,17 +98,110 @@
     cursor: pointer;
 }
 
-.tax-info {
-    display: none;
-}
-
+/* Tax Toggle */
 .tax-toggle {
     display: flex;
     align-items: center;
-    margin-left: 30px;
+    justify-content: center;
     white-space: nowrap;
+    margin-top: 10px;
     border: 1px solid black;
     padding: 8px 16px;
     border-radius: 1rem;
     height: 3rem;
+    position: static;
+    background: none;
+    z-index: auto;
+    text-align: center;
 }
+
+.tax-info {
+    display: none;
+}
+
+/* Grid margin */
+.row {
+    margin-top: 15px;
+}
+
+/* -------------------- Responsive Styles -------------------- */
+
+/* Desktop (≥769px) */
+@media (min-width: 769px) {
+    .filter-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .filter-container {
+        margin-right: 20px;
+        background-color: transparent;
+        position: relative;
+        z-index: auto;
+        overflow-x: hidden;
+        padding-left: 10px;
+        padding-right: 40px;
+    }
+
+    .scroll-btn {
+        display: flex;
+    }
+
+    .scroll-btn.left {
+        left: 0;
+    }
+
+    .scroll-btn.right {
+        right: 0;
+    }
+
+    #filters {
+        padding: 0;
+    }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+    .mobile-search-bar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: #fff;
+        padding: 10px 0;
+    }
+
+    .filter-container {
+        position: sticky;
+        top: 0;
+    }
+
+    .tax-toggle {
+        position: static;
+        background: none;
+        z-index: auto;
+    }
+
+    .scroll-btn {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .sticky-filters-wrapper {
+      position: sticky;
+      top: 80px; 
+      z-index: 999;
+      background-color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      box-shadow: 0 4px 6px -6px rgba(0, 0, 0, 0.1);
+      transition: top 0.3s ease;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .tax-toggle {
+      margin-left: 2rem;
+    }
+  }
