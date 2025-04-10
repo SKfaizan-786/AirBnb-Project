@@ -123,3 +123,66 @@ body {
     height: 400px;
     width: 80vh;
 }
+
+.show-img {
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .show-img {
+        height: 40vh;
+    }
+
+    .show-card {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem;
+    }
+
+    .btns {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #map {
+        width: 100% !important;
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .show-img {
+        height: 35vh;
+    }
+
+    .card-body {
+        padding: 1rem !important;
+    }
+
+    #map {
+        width: 100% !important;
+        height: 250px;
+    }
+}
+
+@media (min-width: 768px) {
+    .show-card {
+        max-width: 800px;
+        margin: auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .btns {
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: start;
+    }
+
+    #map {
+        width: 100%;
+    }
+}
